@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Noto Nastaliq Urdu';
+  src: url('./fonts/NotoNastaliqUrdu.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+@theme {
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+  user-select: none;
+}
+
+input,
+textarea,
+[contenteditable] {
+  user-select: text;
+}
+
+/* Measurement slip (print window) */
+.slip-page {
+  width: 210mm;
+  margin: 0 auto;
+  padding: 10mm 12mm;
+  color: #111;
+  background: #fff;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.slip-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  line-height: 1.9;
+  opacity: 1;
+  color: #111;
+}
+
+/* Urdu labels inside the measurement entry form */
+.urdu-field > span:first-child {
+  font-family: var(--font-urdu);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.9;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Typed Urdu text starts from the right too */
+.urdu-field input,
+.urdu-field textarea {
+  direction: rtl;
+  text-align: right;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    background: #fff;
+  }
+  .slip-page {
+    margin: 0;
+    padding: 8mm 10mm;
+  }
+}

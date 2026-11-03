@@ -1,0 +1,12 @@
+appId: com.tailor.management
+productName: Tailor Manager
+directories:
+  output: dist
+files:
+  - out/**
+  - package.json
+  - build/TMS_Logo.png
+win:
+  icon: build/TMS_Logo.png
+  target:
+    - portable
