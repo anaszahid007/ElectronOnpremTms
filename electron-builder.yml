@@ -9,4 +9,10 @@ files:
 win:
   icon: build/TMS_Logo.png
   target:
-    - portable
+    - nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Tailor Manager

@@ -67,8 +67,8 @@ textarea,
 
 @media print {
   @page {
-    size: A4;
-    margin: 0;
+    /* Let printer driver decide paper size (removed size: A4) */
+    margin: auto;  /* Use printer's default printable area */
   }
   body {
     background: #fff;

@@ -124,7 +124,7 @@ async function printSlip(customerId: number, preview: boolean, orderId?: number)
 
   const result = await new Promise<string>((resolve) => {
     win.webContents.print(
-      { silent, deviceName, printBackground: true, pageSize: 'A4', margins: { marginType: 'none' } },
+      { silent, deviceName, printBackground: true, margins: { marginType: 'default' } },
       (success, failureReason) => resolve(success ? '' : failureReason || 'Unknown error')
     )
   })
